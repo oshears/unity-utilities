@@ -1,0 +1,23 @@
+{
+    "name": "com.osgames.utilities",
+    "version": "1.0.0",
+    "displayName": "OSGames Utilities",
+    "description": "Generic utilities that can be useful in any unity project.",
+    "unity": "2022.3",
+    "unityRelease": "45f1",
+    "documentationUrl": "https://github.com/oshears/unity-utilities",
+    "changelogUrl": "https://github.com/oshears/unity-utilities",
+    "licensesUrl": "https://github.com/oshears/unity-utilities",
+    "dependencies": {
+        "com.unity.textmeshpro": "3.0.9",
+        "com.unity.inputsystem": "1.7.0"
+    },
+    "keywords": [
+        "Utilities"
+    ],
+    "author": {
+        "name": "Osaze Shears",
+        "email": "yoze15@gmail.com",
+        "url": "https://github.com/oshears/"
+    }
+}

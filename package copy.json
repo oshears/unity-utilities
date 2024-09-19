@@ -1,0 +1,25 @@
+{
+    "name": "com.osgames.lastui",
+    "version": "1.0.0",
+    "displayName": "OSGames Last UI",
+    "description": "A modified version of the Last UI asset. Original asset is located here: https://assetstore.unity.com/packages/2d/gui/warzone-ui-complete-menu-ui-278735",
+    "unity": "2022.3",
+    "unityRelease": "45f1",
+    "documentationUrl": "https://github.com/oshears/last-ui",
+    "changelogUrl": "https://github.com/oshears/last-ui",
+    "licensesUrl": "https://github.com/oshears/last-ui",
+    "dependencies": {
+        "com.unity.textmeshpro": "3.0.9",
+        "com.unity.inputsystem": "1.7.0"
+    },
+    "keywords": [
+        "Last UI",
+        "User Interface",
+        "GUI"
+    ],
+    "author": {
+        "name": "Osaze Shears",
+        "email": "yoze15@gmail.com",
+        "url": "https://github.com/oshears/"
+    }
+}
