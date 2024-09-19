@@ -28,14 +28,15 @@ namespace OSGames.Utilities {
         // load dictionary from lists
         public void OnAfterDeserialize()
         {
-            this.Clear();
+            if (keys.Count > 0){
+                Clear();
+                if(keys.Count != values.Count)
+                    throw new System.Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
 
-            if(keys.Count != values.Count)
-                throw new System.Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
-
-            for(int i = 0; i < keys.Count; i++){
-                Add(keys[i],values[i]);
-                // Add(keys_, values*);*_
+                for(int i = 0; i < keys.Count; i++){
+                    Add(keys[i],values[i]);
+                    // Add(keys_, values*);*_
+                }
             }
         }
     }
