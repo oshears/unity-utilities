@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OSGames.Utilities.Animator {
+namespace OSGames.Utilities.Animations {
 
     using UnityEngine;
     
