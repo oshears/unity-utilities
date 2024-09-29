@@ -1,17 +1,20 @@
+
+#if UNITY_EDITOR
+
 using UnityEngine;
 using UnityEditor;
 
-namespace OSGames.Utilities.Gizmos{
+namespace OSGames.Utilities.Gizmos {
 
     public class VisualGizmo : MonoBehaviour
     {
-        [SerializeField] public Color m_GizmoColor;
-        [SerializeField] public Vector3 m_GizmoSize;
+        [SerializeField] public Color m_GizmoColor = Color.red;
+        [SerializeField] public Vector3 m_GizmoSize = Vector3.one;
         [SerializeField] public Vector3 m_GizmosShapeOffset;
-        [SerializeField] public string m_GizmoText;
+        [SerializeField] public string m_GizmoText = "Test Gizmo";
         [SerializeField] public Vector3 m_GizmoTextOffset;
-        [SerializeField] public GizmoShape m_GizmoShape;
-        [SerializeField] public bool m_ShowGizmo;
+        [SerializeField] public GizmoShape m_GizmoShape = GizmoShape.Sphere;
+        [SerializeField] public bool m_ShowGizmo = true;
         [SerializeField] public BoxCollider boxCollider;
         [SerializeField] public SphereCollider sphereCollider;
         [SerializeField] public Direction m_ShowDirection;
@@ -37,32 +40,31 @@ namespace OSGames.Utilities.Gizmos{
             Back
         }
 
-        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             if (!m_ShowGizmo) return;
 
             // Show base gizmo
-            Gizmos.color = m_GizmoColor;
+            UnityEngine.Gizmos.color = m_GizmoColor;
             if (m_GizmoShape == GizmoShape.Cube)
             {
-                Gizmos.DrawCube(transform.position + m_GizmosShapeOffset, m_GizmoSize);
-                if (boxCollider) Gizmos.DrawCube(transform.position + boxCollider.center, boxCollider.size);
+                UnityEngine.Gizmos.DrawCube(transform.position + m_GizmosShapeOffset, m_GizmoSize);
+                if (boxCollider) UnityEngine.Gizmos.DrawCube(transform.position + boxCollider.center, boxCollider.size);
             }
             if (m_GizmoShape == GizmoShape.WireCube)
             {
-                Gizmos.DrawWireCube(transform.position + m_GizmosShapeOffset, m_GizmoSize);
-                if (boxCollider) Gizmos.DrawWireCube(transform.position + boxCollider.center, boxCollider.size);
+                UnityEngine.Gizmos.DrawWireCube(transform.position + m_GizmosShapeOffset, m_GizmoSize);
+                if (boxCollider) UnityEngine.Gizmos.DrawWireCube(transform.position + boxCollider.center, boxCollider.size);
             }
             if (m_GizmoShape == GizmoShape.Sphere)
             {
-                Gizmos.DrawSphere(transform.position + m_GizmosShapeOffset, m_GizmoSize.x);
-                if (sphereCollider) Gizmos.DrawSphere(transform.position + sphereCollider.center, sphereCollider.radius);
+                UnityEngine.Gizmos.DrawSphere(transform.position + m_GizmosShapeOffset, m_GizmoSize.x);
+                if (sphereCollider) UnityEngine.Gizmos.DrawSphere(transform.position + sphereCollider.center, sphereCollider.radius);
             }
             if (m_GizmoShape == GizmoShape.WireSphere)
             {
-                Gizmos.DrawWireSphere(transform.position + m_GizmosShapeOffset, m_GizmoSize.x);
-                if (sphereCollider) Gizmos.DrawWireSphere(transform.position + sphereCollider.center, sphereCollider.radius);
+                UnityEngine.Gizmos.DrawWireSphere(transform.position + m_GizmosShapeOffset, m_GizmoSize.x);
+                if (sphereCollider) UnityEngine.Gizmos.DrawWireSphere(transform.position + sphereCollider.center, sphereCollider.radius);
             }
 
             // Show direction
@@ -101,10 +103,11 @@ namespace OSGames.Utilities.Gizmos{
                     break;
             }
 
-            Gizmos.color = m_DirectionColor;
-            Gizmos.DrawLine(startPoint, endPoint);
-            Gizmos.DrawSphere(endPoint, 0.1f * m_DirectionLength);
+            UnityEngine.Gizmos.color = m_DirectionColor;
+            UnityEngine.Gizmos.DrawLine(startPoint, endPoint);
+            UnityEngine.Gizmos.DrawSphere(endPoint, 0.1f * m_DirectionLength);
         }
-        #endif
+        
     }
 }
+#endif

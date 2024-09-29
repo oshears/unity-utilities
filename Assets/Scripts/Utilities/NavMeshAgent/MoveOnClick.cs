@@ -36,9 +36,9 @@ namespace OSGames.Utilities.AI {
         }
 
         void OnDrawGizmos() {
-            Gizmos.DrawRay(ray.origin,ray.direction);
-            Gizmos.DrawLine(ray.origin,ray.origin + 500*ray.direction);
-            Gizmos.DrawSphere(destination,1);
+            UnityEngine.Gizmos.DrawRay(ray.origin,ray.direction);
+            UnityEngine.Gizmos.DrawLine(ray.origin,ray.origin + 500*ray.direction);
+            UnityEngine.Gizmos.DrawSphere(destination,1);
         }
     }
 }
