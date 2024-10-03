@@ -26,8 +26,6 @@ namespace OSGames.Utilities.AI {
             }
 
             method();
-            // Execute Typing Animation
-            // m_Animator.SetBool("Typing",true);
         }
 
     }
