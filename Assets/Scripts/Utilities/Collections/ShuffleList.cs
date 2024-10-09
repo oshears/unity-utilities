@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 
-namespace OSGames.Utilities{
+namespace OSGames.Utilities {
 
     public static class ListFunctions {
 
