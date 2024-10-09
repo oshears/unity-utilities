@@ -6,11 +6,15 @@ namespace OSGames.Utilities.AI {
 
     public class MoveOnClick : MonoBehaviour {
 
-        [SerializeField] NavMeshAgent m_Agent;
+        NavMeshAgent m_Agent;
 
         Ray ray;
 
         Vector3 destination;
+
+        void Awake(){
+            m_Agent = GetComponent<NavMeshAgent>();
+        }
 
         void Start() {
 
