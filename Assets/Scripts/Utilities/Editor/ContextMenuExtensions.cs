@@ -6,18 +6,13 @@ namespace OSGames.Utilities{
 
     public static class ContextMenuExtensions {
 
-        // [ContextMenuItem("Paste Keep Position",OnPasteKeepPosition)]
-        // string pasteKeepPosition;
-
-        [MenuItem("OSGames/Paste Keep Position")]
+        [MenuItem("GameObject/Paste Keep Position")]
         static void OnPasteKeepPosition() {
-            // Selection.cu
-            Debug.Log("Dummy Paste");
+
+            for(int i = 0; i < Selection.gameObjects.Length; i++){
+                Debug.Log("Executed Paste Keep Position");
+            }
         }
-
-
-
-
     }
 }
 #endif
