@@ -13,7 +13,7 @@ namespace OSGames.Utilities {
 
         TextField baseNameField;
 
-        [MenuItem("Utiliies/Utility Menu")]
+        [MenuItem("Utilities/Utility Menu")]
         public static void ShowWindow()
         {
             UtilityEditorWindow wnd = GetWindow<UtilityEditorWindow>();
