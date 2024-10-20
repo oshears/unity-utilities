@@ -14,7 +14,7 @@ namespace OSGames.Utilities.Gizmos {
         [SerializeField] public string m_GizmoText = "Test Gizmo";
         [SerializeField] public Vector3 m_GizmoTextOffset;
         [SerializeField] public GizmoShape m_GizmoShape = GizmoShape.Sphere;
-        [SerializeField] public bool m_ShowGizmo = true;
+        [SerializeField] public bool m_AlwaysShowGizmo;
         [SerializeField] public BoxCollider boxCollider;
         [SerializeField] public SphereCollider sphereCollider;
         [SerializeField] public Direction m_ShowDirection;
@@ -40,10 +40,18 @@ namespace OSGames.Utilities.Gizmos {
             Back
         }
 
+        private void OnDrawGizmosSelected() {
+            DrawGizmos();
+        }
+
         private void OnDrawGizmos()
         {
-            if (!m_ShowGizmo) return;
+            if (!m_AlwaysShowGizmo) return;
 
+            DrawGizmos();
+        }
+
+        void DrawGizmos(){
             // Show base gizmo
             UnityEngine.Gizmos.color = m_GizmoColor;
             if (m_GizmoShape == GizmoShape.Cube)
